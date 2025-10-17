@@ -92,7 +92,7 @@
 Join our community and stay updated on the latest in network automation:
 
 <div style="display: flex; gap: 1rem; justify-content: center; margin: 2rem 0;">
-  <a href="https://www.linkedin.com/in/bartdorlandt/" target="_blank" class="cta-button">💼 LinkedIn</a>
+  <a href="https://www.linkedin.com/groups/15393055/" target="_blank" class="cta-button">💼 LinkedIn</a>
   <a href="/blog/" class="cta-button">📝 Blog</a>
   <a href="/feed_rss_created.xml" class="cta-button">📡 RSS Feed</a>
 </div>
