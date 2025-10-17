@@ -22,7 +22,7 @@ theme:
     text: Roboto
     code: Roboto Mono
 
-  custom_dir: docs/overrides
+  # custom_dir: docs/overrides
 
   features:
     - announce.dismiss
