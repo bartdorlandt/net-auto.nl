@@ -13,3 +13,6 @@ The NL Network Automation Meetup is organized by a group of dedicated volunteers
 
 - [Bart Dorlandt](https://www.linkedin.com/in/bartdorlandt/)
 - [Dan Peachey](https://www.linkedin.com/in/dpeachey/)
+
+## LinkedIn Group
+We have a [LinkedIn Group](https://www.linkedin.com/groups/15393055/) where members can connect, share insights, and stay updated on upcoming events and discussions related to network automation.
