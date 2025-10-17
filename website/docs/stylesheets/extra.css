@@ -1,0 +1,166 @@
+/* Network Automation Theme Enhancements */
+
+:root {
+  --md-primary-fg-color:        #37474f;
+  --md-primary-fg-color--light: #546e7a;
+  --md-primary-fg-color--dark:  #263238;
+  --md-accent-fg-color:         #00acc1;
+  --md-accent-fg-color--light:  #26c6da;
+  --md-accent-fg-color--dark:   #00838f;
+}
+
+/* Dark theme network automation colors */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #7e57c2;
+  --md-primary-fg-color--light: #9575cd;
+  --md-primary-fg-color--dark:  #673ab7;
+  --md-accent-fg-color:         #00e5ff;
+  --md-accent-fg-color--light:  #18ffff;
+  --md-accent-fg-color--dark:   #00b8d4;
+  --md-code-bg-color:           #1e1e2e;
+  --md-code-fg-color:           #cdd6f4;
+}
+
+/* Header enhancements */
+.md-header {
+  background: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-primary-fg-color--dark));
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Network automation specific styling */
+.network-automation-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.tech-badge {
+  background: var(--md-accent-fg-color);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Code block enhancements */
+.highlight pre {
+  border-left: 4px solid var(--md-accent-fg-color);
+  border-radius: 8px;
+  background: var(--md-code-bg-color);
+}
+
+/* Network topology diagrams */
+.topology-container {
+  background: linear-gradient(145deg, #f0f4f8, #e2e8f0);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+[data-md-color-scheme="slate"] .topology-container {
+  background: linear-gradient(145deg, #2d3748, #1a202c);
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* Enhanced navigation */
+.md-nav__item--active > .md-nav__link {
+  background: linear-gradient(90deg, var(--md-accent-fg-color), transparent);
+  border-left: 4px solid var(--md-accent-fg-color);
+}
+
+/* Custom admonitions for network automation */
+.md-typeset .admonition.automation {
+  border-color: #00acc1;
+}
+
+.md-typeset .admonition.automation > .admonition-title {
+  background-color: rgba(0, 172, 193, 0.1);
+  border-color: #00acc1;
+}
+
+.md-typeset .admonition.automation > .admonition-title::before {
+  background-color: #00acc1;
+  mask-image: var(--md-admonition-icon--tip);
+}
+
+.md-typeset .admonition.network {
+  border-color: #7e57c2;
+}
+
+.md-typeset .admonition.network > .admonition-title {
+  background-color: rgba(126, 87, 194, 0.1);
+  border-color: #7e57c2;
+}
+
+.md-typeset .admonition.network > .admonition-title::before {
+  background-color: #7e57c2;
+  mask-image: var(--md-admonition-icon--info);
+}
+
+/* Responsive improvements */
+@media screen and (max-width: 76.1875em) {
+  .network-automation-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Footer enhancements */
+.md-footer {
+  background: linear-gradient(135deg, var(--md-primary-fg-color--dark), #1a1a2e);
+}
+
+/* Table styling for network documentation */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.md-typeset table:not([class]) th {
+  background: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-primary-fg-color--light));
+  color: white;
+  font-weight: 600;
+}
+
+/* Highlight important network terms */
+.network-term {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+/* Custom buttons for call-to-action */
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--md-accent-fg-color), var(--md-accent-fg-color--dark));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  color: white;
+}
+
+/* Animation for network icons */
+@keyframes pulse-network {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}

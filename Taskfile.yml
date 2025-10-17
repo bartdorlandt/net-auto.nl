@@ -1,0 +1,85 @@
+version: "3"
+
+vars:
+  site_dir: website
+
+tasks:
+  default: task -l
+  build:
+    desc: Build the site
+    dir: "{{.site_dir}}"
+    cmd: |
+      export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
+      uv run mkdocs build -v --strict -t material
+
+  test:
+    desc: Run the github test workflow with act
+    cmds:
+      - act -j test
+
+  deploy:
+    desc: Deploy the site to GitHub Pages branch
+    cmds:
+      - uv run mkdocs gh-deploy --force
+
+  serve:
+    desc: Serve the site
+    dir: website
+    cmd: |
+      export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
+      open http://localhost:8000/
+      uv run mkdocs serve
+
+  ### Initialize the repo
+  init:
+    desc: Initialize this repo install all dependencies for uv and mac
+    cmds:
+      - task: init:uv
+      - task: init:mac
+
+  init:uv:
+    desc: Initialize this repo with python dependencies with uv
+    cmds:
+      - uv sync
+
+  init:mac:
+    desc: Initialize this repo with mac dependencies
+    platforms:
+      - darwin
+    cmds:
+      - brew install cairo freetype libffi libjpeg libpng zlib pngquant
+
+  ### Create a post
+  post:
+    desc: Create a new event and open it in vscode
+    aliases: [new]
+    silent: true
+    cmd: |
+      cat << EOF >> $site_dir/docs/events/dates/untitled.md
+      ---
+      # draft: true
+      date:
+        created: {{ now.Format "2006-01-02" }}
+        # updated: {{ now.Format "2006-01-02" }}
+      # title: Something different than below
+      description: 2006-01-02 NLNAM Meetup event
+      categories:
+        - nlnam
+      tags:
+        - nlnam
+        - Set_tag2
+      # slug: example-slug # usually not needed
+      ---
+
+      # Title to be set
+
+      ![alt text](images/untitled/untitled.png){ style="width:230px" align=right}
+      Introduction to the post
+
+      <!-- more -->
+
+      continue the post here
+      EOF
+      code $site_dir/docs/blog/posts/untitled.md
+    env:
+      site_dir: "{{.site_dir}}"

@@ -1,0 +1,165 @@
+site_name: NL Network Automation Meetup
+site_description: NL Network Automation Meetup Home
+site_url: "https://net-auto.nl/"
+site_author: Bart Dorlandt
+
+nav:
+  - Home: index.md
+  - Events: events/index.md
+  - About us: about_us/about_us.md
+  - Contact: contact/index.md
+
+theme:
+  name: material
+  language: en
+
+  icon:
+    logo: fontawesome/solid/network-wired
+
+  favicon: images/favicon.png
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  custom_dir: docs/overrides
+
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.footnote.tooltips
+    - content.tabs.link
+    - content.tooltips
+    - header.autohide
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.path
+    - navigation.prune
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
+
+  palette:
+    # Dark mode - Network automation focused
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+    # Light mode - Clean and professional
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+plugins:
+  - search
+  - social
+  - blog:
+      blog_dir: blog
+      blog_toc: true
+      archive_date_format: yyyy
+  - tags
+  - rss:
+      match_path: "events/dates/.*"
+      date_from_meta:
+        as_creation: date.created
+        as_update: date.updated
+  # - minify:
+  #     minify_html: true
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: bartdorlandt
+      repo: net-auto.nl
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/mkdocs.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      name: NLNAM on LinkedIn
+      link: https://www.linkedin.com/groups/15393055/
+    - icon: fontawesome/brands/github
+      name: net-auto.nl on GitHub
+      link: https://github.com/bartdorlandt/net-auto.nl
+    - icon: fontawesome/solid/rss
+      name: RSS Feed
+      link: feed_rss_created.xml
+    - icon: fontawesome/solid/envelope
+      name: Contact Us
+      link: contact/index.html
+
+  generator: false
+
+  tags:
+    Network Automation: network-automation
+    Python: python
+    Ansible: ansible
+    Networking: networking
+    DevOps: devops
+    Infrastructure: infrastructure
+
+extra_css:
+  - stylesheets/extra.css
