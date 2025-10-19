@@ -4,7 +4,7 @@ site_url: "https://net-auto.nl/"
 site_author: Bart Dorlandt
 
 nav:
-  - Home: index.md
+  - NLNAM: index.md
   - Events: events/index.md
   - About us: about_us/about_us.md
   - Contact: contact/index.md
