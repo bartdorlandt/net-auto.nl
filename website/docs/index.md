@@ -79,14 +79,6 @@
     - Government agencies
     - Startups and scale-ups
 
-## 📊 Recent Topics
-
-| Topic                              | Speaker                | Technology Stack                                                                    |
-| ---------------------------------- | ---------------------- | ----------------------------------------------------------------------------------- |
-| **Ansible for Network Automation** | Network Engineer @ ING | <span class="tech-badge">Ansible</span> <span class="tech-badge">Python</span>      |
-| **GitOps for Infrastructure**      | DevOps Lead @ Adyen    | <span class="tech-badge">Terraform</span> <span class="tech-badge">GitLab CI</span> |
-| **Network Observability**          | SRE @ Booking.com      | <span class="tech-badge">Prometheus</span> <span class="tech-badge">Grafana</span>  |
-
 ## 🔗 Stay Connected
 
 Join our community and stay updated on the latest in network automation:
