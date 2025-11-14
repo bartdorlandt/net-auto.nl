@@ -204,3 +204,126 @@
   0%, 100% { opacity: 1; }
   50% { opacity: 0.7; }
 }
+
+/* Event tiles styling */
+.events-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.event-tile {
+  background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+  max-width: 509px;
+}
+
+.event-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+[data-md-color-scheme="slate"] .event-tile {
+  background: linear-gradient(145deg, #2d3748, #1a202c);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.event-date {
+  background: linear-gradient(135deg, var(--md-accent-fg-color), var(--md-accent-fg-color--dark));
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.event-day {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.event-month {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.25rem;
+}
+
+.event-year {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-top: 0.25rem;
+}
+
+.event-content {
+  padding: 1.5rem;
+}
+
+.event-content h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--md-primary-fg-color);
+  font-size: 1.25rem;
+}
+
+[data-md-color-scheme="slate"] .event-content h3 {
+  color: var(--md-primary-fg-color--light);
+}
+
+.event-sponsor {
+  color: var(--md-accent-fg-color);
+  font-weight: 600;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.event-description {
+  color: #64748b;
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+[data-md-color-scheme="slate"] .event-description {
+  color: #94a3b8;
+}
+
+.event-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-primary-fg-color--dark));
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.event-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  color: white;
+}
+
+/* Mobile responsiveness for event tiles */
+@media screen and (max-width: 48em) {
+  .events-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .event-tile {
+    margin: 0 auto;
+    max-width: 400px;
+  }
+}

@@ -18,6 +18,9 @@ jobs:
           enable-cache: true
           ignore-nothing-to-cache: true
 
+      - name: Run tests
+        run: uv run pytest
+
       - name: Build mkdocs site
         run: |
           cd website

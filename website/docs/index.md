@@ -18,7 +18,7 @@
 ## 🎯 What We Do
 
 !!! automation "Network Automation Focus"
-    We organize regular meetups featuring expert talks, hands-on workshops, and networking opportunities for professionals working with, but not limited to:
+    We organize regular meetups featuring interesting talks and networking opportunities for professionals working with, but not limited to:
 
     - **Infrastructure as Code**
     - **Source of Truth (SoT)**
@@ -51,9 +51,9 @@
 
 ## 🌟 Community Highlights
 
-=== "Expert Speakers"
+=== "Speakers"
 
-    Our meetups feature industry experts sharing real-world experiences with:
+    Our meetups bring together network automation enthusiasts of all levels, opening the stage to whoever has something interesting to share
 
     - Network automation strategies
     - Infrastructure scaling challenges

@@ -78,6 +78,7 @@ plugins:
       blog_toc: true
       archive_date_format: yyyy
   - tags
+  - macros
   - rss:
       match_path: "events/dates/.*"
       date_from_meta:
