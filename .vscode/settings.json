@@ -8,7 +8,37 @@
     "!relative scalar",
     "tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg",
     "tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji",
-    "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format"
+    "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format",
+    "tag:yaml.org,2002:python/object/apply:pymdownx.slugs.slugify mapping"
   ],
-  "cSpell.words": ["Adyen", "Autocon", "NLNAM", "Peachey", "venv"]
+  "cSpell.words": [
+    "Adyen",
+    "arithmatex",
+    "Autocon",
+    "autohide",
+    "bartdorlandt",
+    "betterem",
+    "DYLD",
+    "fontawesome",
+    "inlinehilite",
+    "kwds",
+    "linenums",
+    "magiclink",
+    "Netpicker",
+    "NLNAM",
+    "Peachey",
+    "pygments",
+    "pymdownx",
+    "Roboto",
+    "Rokin",
+    "Slurpit",
+    "smartsymbols",
+    "superfences",
+    "tasklist",
+    "twemoji",
+    "venv"
+  ],
+  "python.testing.pytestArgs": ["."],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true
 }
