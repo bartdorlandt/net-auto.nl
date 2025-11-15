@@ -15,6 +15,7 @@ Thank you Adyen for providing your office space to host us and Netpicker/Slurpit
 
 * [Register for the event](https://nlnam.eventbrite.com/)
     * Registration ends on February 2nd at 23:59.
+    * We are only able to support a limited number of people at the venue so if you cannot attend please be sure to de-register to free up the ticket for someone else.
 * [Submit a presentation proposal](https://forms.gle/qmjaMqcHLuJV3rTy8)
 
 ## Specifics
