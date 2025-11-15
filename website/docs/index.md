@@ -85,7 +85,7 @@ Join our community and stay updated on the latest in network automation:
 
 <div class="stay-connected-buttons">
   <a href="https://www.linkedin.com/groups/15393055/" target="_blank" class="cta-button">💼 LinkedIn</a>
-  <a href="/blog/" class="cta-button">📝 Blog</a>
+  <a href="/events/" class="cta-button">📅 Events</a>
   <a href="/feed_rss_created.xml" class="cta-button">📡 RSS Feed</a>
 </div>
 

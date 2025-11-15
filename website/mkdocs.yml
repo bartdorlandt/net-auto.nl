@@ -73,10 +73,10 @@ theme:
 plugins:
   - search
   - social
-  - blog:
-      blog_dir: blog
-      blog_toc: true
-      archive_date_format: yyyy
+  # - blog:
+  #     blog_dir: blog
+  #     blog_toc: true
+  #     archive_date_format: yyyy
   - tags
   - macros
   - rss:
@@ -84,8 +84,6 @@ plugins:
       date_from_meta:
         as_creation: date.created
         as_update: date.updated
-  # - minify:
-  #     minify_html: true
 
 markdown_extensions:
   - abbr
