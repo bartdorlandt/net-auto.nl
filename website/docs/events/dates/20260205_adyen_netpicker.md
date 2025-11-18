@@ -9,7 +9,7 @@ title: NLNAM Meetup
 
 # NLNAM Meetup with Adyen & Netpicker
 
-The next meetup is hosted by [Adyen](https://www.adyen.com/) & [Netpicker](https://netpicker.io/) / [Slurpit](https://slurpit.io/).
+The next meetup is hosted by [Adyen](https://www.adyen.com/) & [Netpicker](https://netpicker.io/) / [Slurpit](https://slurpit.io/) on 2026-02-05.
 
 Thank you Adyen for providing your office space to host us and Netpicker/Slurpit for sponsoring the pizzas and drinks!
 

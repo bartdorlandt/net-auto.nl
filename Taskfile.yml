@@ -79,7 +79,7 @@ tasks:
 
       # NLNAM Meetup with $sponsors
 
-      The next meetup is hosted by [$sponsors](https://$event_website).
+      The next meetup is hosted by [$sponsors](https://$event_website) on $event_date.
 
       Thank you $sponsors for providing your office space to host us and fill our bellies with pizzas and drinks!
 
