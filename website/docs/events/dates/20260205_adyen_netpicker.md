@@ -2,7 +2,7 @@
 # draft: true
 date:
   created: 2025-11-14
-  # updated: 2025-11-14
+  updated: 2025-11-18
 description: 2026-02-05 NLNAM Meetup event
 title: NLNAM Meetup
 ---
@@ -13,7 +13,7 @@ The next meetup is hosted by [Adyen](https://www.adyen.com/) & [Netpicker](https
 
 Thank you Adyen for providing your office space to host us and Netpicker/Slurpit for sponsoring the pizzas and drinks!
 
-* [Register for the event](https://nlnam.eventbrite.com/)
+* [Register for the event](https://nlnam_adyen_netpicker.eventbrite.nl/)
     * Registration ends on February 2nd at 23:59.
     * We are only able to support a limited number of people at the venue so if you cannot attend please be sure to de-register to free up the ticket for someone else.
 * [Submit a presentation proposal](https://forms.gle/qmjaMqcHLuJV3rTy8)
