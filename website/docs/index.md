@@ -7,7 +7,7 @@
       <p>The Netherlands Network Automation Meetup (NLNAM) is a vibrant community of network engineers, DevOps practitioners, automation enthusiasts and software developers who are passionate about modernizing network infrastructure through code.</p>
       <p style="text-align: center; margin-top: 1.5rem;">
         <a href="/events/" class="cta-button">📅 Upcoming Events</a>
-        <a href="https://www.linkedin.com/groups/15393055/" target="_blank" class="cta-button" style="margin-left: 1rem;">🤝 Join Us on LinkedIn</a>
+        <a href="https://www.linkedin.com/groups/15393055/" target="_blank" class="cta-button">🤝 Join Us on LinkedIn</a>
       </p>
     </div>
     <img src="images/net-auto-logo-transparent.png" alt="NL Network Automation Meetup Logo" style="max-width: 320px; width: auto; height: auto; border-radius: 15px; flex-shrink: 0;">

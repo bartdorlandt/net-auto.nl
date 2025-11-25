@@ -6,6 +6,7 @@ vars:
 
 tasks:
   default: task -l
+
   build:
     desc: Build the site
     dir: "{{.site_dir}}"

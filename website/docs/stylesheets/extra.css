@@ -136,6 +136,7 @@
   /* Stay Connected buttons maintain consistent width on mobile */
   .stay-connected-buttons .cta-button {
     width: 200px;
+    width: 100%;
     margin: 0.25rem 0;
   }
 }
@@ -173,20 +174,26 @@
   background: linear-gradient(135deg, var(--md-accent-fg-color), var(--md-accent-fg-color--dark));
   color: white;
   padding: 0.75rem 1.5rem;
-  border-radius: 25px;
+  border-radius: 16px;
   text-decoration: none;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  width: 200px;
+  max-width: 260px;
+  width: 100%;
+  max-height: 200px;
+  height: 100%;
   text-align: center;
+  border: 1px solid rgba(0,0,0,0.05);
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
   color: white;
 }
 
