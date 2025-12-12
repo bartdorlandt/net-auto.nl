@@ -81,7 +81,7 @@ tasks:
       - brew install cairo freetype libffi libjpeg libpng zlib pngquant
 
   ### Create a post
-  post:
+  event:
     desc: Create a new event and open it in vscode
     aliases: [new]
     silent: true
