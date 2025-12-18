@@ -52,23 +52,28 @@ theme:
     - toc.integrate
 
   palette:
-    # Dark mode - Network automation focused
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: deep purple
-      accent: cyan
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+    scheme: slate
+    primary: deep purple
+    accent: cyan
 
-    # Light mode - Clean and professional
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: blue grey
-      accent: teal
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
+    # # Dark mode - Network automation focused
+    # - media: "(prefers-color-scheme: dark)"
+    #   scheme: slate
+    #   primary: deep purple
+    #   accent: cyan
+    #   toggle:
+    #     icon: material/brightness-4
+    #     name: There is no such thing as light mode
+    #     # name: Switch to light mode
+
+    # # Light mode - Clean and professional
+    # - media: "(prefers-color-scheme: light)"
+    #   scheme: default
+    #   primary: blue grey
+    #   accent: teal
+    #   toggle:
+    #     icon: material/brightness-7
+    #     name: Switch to dark mode
 
 plugins:
   - search

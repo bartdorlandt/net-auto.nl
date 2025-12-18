@@ -48,6 +48,12 @@ tasks:
     cmds:
       - act -j test
 
+  test:pytest:
+    desc: Run pytest
+    dir: website
+    cmds:
+      - uv run pytest -v
+
   deploy:
     desc: Deploy the site to GitHub Pages branch
     aliases: [delpoy]
@@ -83,10 +89,9 @@ tasks:
     cmds:
       - brew install cairo freetype libffi libjpeg libpng zlib pngquant
 
-  ### Create a post
   event:
     desc: Create a new event and open it in vscode
-    aliases: [new]
+    aliases: [new, post]
     silent: true
     interactive: true
     cmd: |
@@ -119,9 +124,9 @@ tasks:
       Thank you $sponsors for opening your doors to host us and fill our bellies with pizzas and drinks!
 
       * [Register for the event](https://nlnam_${event_sponsor_lower}.eventbrite.nl/)
-          * Registration ends on {\{ _day_in_advance("$event_date", 2) }} at 23:59.
+          * Registration ends on {\{ get_older_date("$event_date", 1) }} at 23:59.
       * [Submit a presentation proposal]({{.rfp_form_url}})
-          * Talks will be selected around {\{ _day_in_advance("$event_date", 30) }}.
+          * Talks will be selected and communicated around {\{ get_older_date("$event_date", 30) }}.
 
       ## Specifics
       * [OPTIONAL] **<u>Bring your ID</u>** to enter the building.
@@ -141,7 +146,7 @@ tasks:
       | 20:00 | Break + Pizza 🍕                              |
       | 20:30 | Talk 3                                        |
       | 21:00 | Closing words                                 |
-      | 21:30 | Doors closing                                 |
+      | 21:30 | Venue closing                                 |
       EOF
       sed -i '' \
         -e 's@{\\@{@g' \
@@ -160,6 +165,7 @@ tasks:
         vars:
           event_date: "{{.upcoming_event_date}}"
           event_sponsor: "{{.upcoming_event_sponsor}}"
+
   internal:reminder_rfp:
     desc: Prepare a reminder to submit RFP for the next event
     silent: true

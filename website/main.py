@@ -51,7 +51,7 @@ def _google_maps_link(address: str) -> str:
     return f'[{address}]({base_url}{query}){{:target="_blank"}}'
 
 
-def _day_in_advance(date: str, minus_days: int = 2) -> str:
+def _get_older_date(date: str, minus_days: int = 2) -> str:
     """
     Extract registration close date from provided date string
     """
@@ -59,7 +59,7 @@ def _day_in_advance(date: str, minus_days: int = 2) -> str:
     year, month, day = map(int, date.split("-"))
     event_date = datetime(year, month, day)
     close_date = event_date - timedelta(days=minus_days)
-    month_str = close_date.strftime("%b")  # short month name
+    month_str = close_date.strftime("%B")  # Long month name
     day_str = str(close_date.day)  # day without leading zero
 
     return f"{month_str} {day_str}"
@@ -135,5 +135,5 @@ def define_env(env):
         return _google_maps_link(address)
 
     @env.macro
-    def registration_closes(date: str, minus: int = 2) -> str:
-        return _day_in_advance(date, minus)
+    def get_older_date(date: str, minus: int = 2) -> str:
+        return _get_older_date(date, minus)
