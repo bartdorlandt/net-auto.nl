@@ -51,7 +51,7 @@ def _google_maps_link(address: str) -> str:
     return f'[{address}]({base_url}{query}){{:target="_blank"}}'
 
 
-def _registration_closes(date: str, minus_days: int = 2) -> str:
+def _day_in_advance(date: str, minus_days: int = 2) -> str:
     """
     Extract registration close date from provided date string
     """
@@ -109,7 +109,8 @@ def define_env(env):
             title = meta.get("title", "NLNAM Meetup")
 
             # Generate tile HTML
-            tile_html = f"""  <div class="event-tile">
+            tile_html = f"""  <a href="dates/{filename}/" class="event-cta">
+  <div class="event-tile">
     <div class="event-date">
       <span class="event-day">{day_str}</span>
       <span class="event-month">{month_str}</span>
@@ -118,9 +119,9 @@ def define_env(env):
     <div class="event-content">
       <h3>{title}</h3>
       <p class="event-sponsor">🏢 Hosted by {sponsor_formatted}</p>
-      <a href="dates/{filename}/" class="event-cta">Learn More</a>
     </div>
   </div>
+</a>
 """
             #   <p class="event-description">{description}</p>
             tiles_html += tile_html
@@ -135,4 +136,4 @@ def define_env(env):
 
     @env.macro
     def registration_closes(date: str, minus: int = 2) -> str:
-        return _registration_closes(date, minus)
+        return _day_in_advance(date, minus)
