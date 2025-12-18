@@ -83,13 +83,14 @@ def test_google_maps_link():
 @pytest.mark.parametrize(
     "date_str, minus, expected_month, expected_day",
     [
-        ("2026-02-05", 2, "Feb", "3"),
-        ("2026-03-10", 1, "Mar", "9"),
-        ("2026-01-01", 5, "Dec", "27"),  # Edge case: day goes below 1
+        ("2026-02-05", 2, "February", "3"),
+        ("2026-03-10", 1, "March", "9"),
+        ("2026-01-01", 5, "December", "27"),  # Edge case: day goes below 1
+        ("2026-04-12", 30, "March", "13"),  # Edge case: day goes below 1
     ],
 )
 def test_registration_closes(
     date_str: str, minus: int, expected_month: str, expected_day: str
 ):
-    day = main._registration_closes(date_str, minus_days=minus)
+    day = main._get_older_date(date_str, minus_days=minus)
     assert day == f"{expected_month} {expected_day}"

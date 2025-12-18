@@ -48,8 +48,17 @@ tasks:
     cmds:
       - act -j test
 
+  test:pytest:
+    desc: Run pytest
+    dir: website
+    cmds:
+      - uv run pytest -v
+
   deploy:
     desc: Deploy the site to GitHub Pages branch
+    aliases: [delpoy]
+    prompt:
+      - This actually deploys the site. Do you want to continue?
     cmds:
       - uv run mkdocs gh-deploy --force
 
@@ -80,10 +89,9 @@ tasks:
     cmds:
       - brew install cairo freetype libffi libjpeg libpng zlib pngquant
 
-  ### Create a post
   event:
     desc: Create a new event and open it in vscode
-    aliases: [new]
+    aliases: [new, post]
     silent: true
     interactive: true
     cmd: |
@@ -97,6 +105,7 @@ tasks:
       read event_address
       event_file="{{.site_dir}}/docs/events/dates/$(echo "$event_date" | sed 's/-//g')_${event_sponsor}.md"
       sponsors=$(sed 's/_/ \& /g' <<< "$event_sponsor")
+      event_sponsor_lower=$(echo "$event_sponsor" | tr '[:upper:]' '[:lower:]')
 
       cat << EOF >> $event_file
       ---
@@ -112,15 +121,16 @@ tasks:
 
       The next meetup is hosted by [$sponsors](https://$event_website) on $event_date.
 
-      Thank you $sponsors for providing your office space to host us and fill our bellies with pizzas and drinks!
+      Thank you $sponsors for opening your doors to host us and fill our bellies with pizzas and drinks!
 
-      * [Register for the event](https://nlnam_${event_sponsor | lower}.eventbrite.nl/)
-          * Registration ends on {\{ registration_closes("$event_date", 2) }} at 23:59.
+      * [Register for the event](https://nlnam_${event_sponsor_lower}.eventbrite.nl/)
+          * Registration ends on {\{ get_older_date("$event_date", 1) }} at 23:59.
       * [Submit a presentation proposal]({{.rfp_form_url}})
+          * Talks will be selected and communicated around {\{ get_older_date("$event_date", 30) }}.
 
       ## Specifics
-      * [OPTIONAL] **<u>Bring your ID</u>** to enter the Adyen building.
-      * [OPTIONAL] We have a hard stop at 21:00. We will need to be outside the building by then.
+      * [OPTIONAL] **<u>Bring your ID</u>** to enter the building.
+      * [OPTIONAL] We have a hard stop at 21:30. We will need to be outside the building by then.
 
       ## Location
       {\{ google_maps_link("$event_address") }}
@@ -136,7 +146,7 @@ tasks:
       | 20:00 | Break + Pizza 🍕                              |
       | 20:30 | Talk 3                                        |
       | 21:00 | Closing words                                 |
-      | 21:30 | Be outside the building                       |
+      | 21:30 | Venue closing                                 |
       EOF
       sed -i '' \
         -e 's@{\\@{@g' \
@@ -155,6 +165,7 @@ tasks:
         vars:
           event_date: "{{.upcoming_event_date}}"
           event_sponsor: "{{.upcoming_event_sponsor}}"
+
   internal:reminder_rfp:
     desc: Prepare a reminder to submit RFP for the next event
     silent: true
