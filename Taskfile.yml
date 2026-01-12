@@ -97,15 +97,15 @@ tasks:
     cmd: |
       echo "Provide the date in format YYYY-MM-DD for the next event:"
       read event_date
-      echo "Provide the sponsor of the next event (without spaces):"
+      echo "Provide the sponsor of the next event (without spaces, in the desired case):"
       read event_sponsor
-      echo "What is the website?"
+      echo "What is the website? (full: https://net-auto.nl)"
       read event_website
-      echo "What is the full address?"
+      echo "What is the full address? (used for Gmaps link)"
       read event_address
-      event_file="{{.site_dir}}/docs/events/dates/$(echo "$event_date" | sed 's/-//g')_${event_sponsor}.md"
-      sponsors=$(sed 's/_/ \& /g' <<< "$event_sponsor")
       event_sponsor_lower=$(echo "$event_sponsor" | tr '[:upper:]' '[:lower:]')
+      event_file="{{.site_dir}}/docs/events/dates/$(echo "$event_date" | sed 's/-//g')_${event_sponsor_lower}.md"
+      sponsors=$(sed 's/_/ \& /g' <<< "$event_sponsor")
 
       cat << EOF >> $event_file
       ---
@@ -119,7 +119,7 @@ tasks:
 
       # NLNAM Meetup with $sponsors
 
-      The next meetup is hosted by [$sponsors](https://$event_website) on $event_date.
+      The next meetup is hosted by [$sponsors]($event_website) on $event_date.
 
       Thank you $sponsors for opening your doors to host us and fill our bellies with pizzas and drinks!
 
@@ -131,6 +131,7 @@ tasks:
       ## Specifics
       * [OPTIONAL] **<u>Bring your ID</u>** to enter the building.
       * [OPTIONAL] We have a hard stop at 21:30. We will need to be outside the building by then.
+      * Parking is TODO not available
 
       ## Location
       {\{ google_maps_link("$event_address") }}
@@ -140,7 +141,7 @@ tasks:
       | Time  | Activity                                      |
       | ----- | --------------------------------------------- |
       | 18:00 | Doors open                                    |
-      | 18:30 | Welcome + **$event_sponsor** sponsor talk     |
+      | 18:25 | Welcome + **$event_sponsor** sponsor talk     |
       | 19:00 | Talk 1                                        |
       | 19:30 | Talk 2                                        |
       | 20:00 | Break + Pizza 🍕                              |
