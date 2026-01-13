@@ -38,7 +38,7 @@ def y_m_d_sponsor_from_filename(filename: str) -> tuple[str, str, str, str]:
         raise ValueError(f"Invalid date in filename: {filename}") from e
 
     # Format sponsor name (replace underscores with spaces and title case)
-    sponsor_formatted = sponsor.replace("_", " & ").title()
+    sponsor_formatted = sponsor.replace("_", " & ")
     return year, month_str, day_str, sponsor_formatted
 
 
@@ -71,7 +71,7 @@ def define_env(env):
     """
 
     @env.macro
-    def generate_event_tiles(total_items: int = 4) -> str:
+    def generate_upcoming_event_tiles(total_items: int = 4) -> str:
         """
         Generate event tiles dynamically from files in the events/dates directory
         """
@@ -95,15 +95,18 @@ def define_env(env):
                 break
             # Extract date and sponsor from filename
             filename = event_file.stem  # e.g., "20260205_adyen_netpicker"
+            year_str, month_str, day_str, sponsor_formatted = (
+                y_m_d_sponsor_from_filename(filename)
+            )
+            if datetime.now() > datetime(
+                int(year_str), datetime.strptime(month_str, "%b").month, int(day_str)
+            ):
+                continue
             content_full = Path(event_file).read_text(encoding="utf-8")
             header, _ = header_and_content(content_full)
             meta = yaml.safe_load(header)
             if meta.get("draft", False):
                 continue
-
-            year_str, month_str, day_str, sponsor_formatted = (
-                y_m_d_sponsor_from_filename(filename)
-            )
 
             # Read the file to get title and description
             title = meta.get("title", "NLNAM Meetup")
@@ -137,3 +140,77 @@ def define_env(env):
     @env.macro
     def get_older_date(date: str, minus: int = 2) -> str:
         return _get_older_date(date, minus)
+
+    @env.macro
+    def generate_previous_events_list() -> str:
+        """
+        Generate a list of previous events (past events only)
+        """
+        events_path = Path(env.project_dir) / "docs" / "events" / "dates"
+        events_path.mkdir(parents=True, exist_ok=True)
+
+        # Get all markdown files
+        event_files = list(events_path.glob("*.md"))
+
+        if not event_files:
+            return '<div class="no-events"><p>📅 No previous events found.</p></div>'
+
+        # Sort files by filename in reverse (most recent first)
+        event_files.sort(reverse=True)
+
+        previous_events = []
+
+        for event_file in event_files:
+            # Extract date and sponsor from filename
+            filename = event_file.stem
+            year_str, month_str, day_str, sponsor_formatted = (
+                y_m_d_sponsor_from_filename(filename)
+            )
+
+            # Check if event is in the past
+            event_date = datetime(
+                int(year_str), datetime.strptime(month_str, "%b").month, int(day_str)
+            )
+            if event_date >= datetime.now():
+                continue
+
+            # Read file to check if it's a draft
+            content_full = Path(event_file).read_text(encoding="utf-8")
+            header, _ = header_and_content(content_full)
+            meta = yaml.safe_load(header)
+            if meta.get("draft", False):
+                continue
+
+            # Get title from metadata
+            title = meta.get("title", "NLNAM Meetup")
+
+            # Add to previous events list
+            previous_events.append({
+                "filename": filename,
+                "year": year_str,
+                "month": month_str,
+                "day": day_str,
+                "sponsor": sponsor_formatted,
+                "title": title,
+                "date": event_date,
+            })
+
+        if not previous_events:
+            return '<div class="no-events"><p>📅 No previous events found.</p></div>'
+
+        # Generate list HTML
+        list_html = '<div class="previous-events-list">\n'
+
+        for event in previous_events:
+            event_date_str = event["date"].strftime("%B %d, %Y")
+            list_html += f"""  <div class="previous-event-item">
+    <a href="/events/dates/{event["filename"]}/">
+      <span class="event-date-text">{event_date_str}</span> -
+      <span class="event-title">{event["title"]}</span>
+      <span class="event-sponsor-text">hosted by {event["sponsor"]}</span>
+    </a>
+  </div>
+"""
+
+        list_html += "</div>\n"
+        return list_html

@@ -215,7 +215,7 @@
 /* Event tiles styling */
 .events-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   margin: 2rem 0;
 }
@@ -332,5 +332,91 @@
   .event-tile {
     margin: 0 auto;
     max-width: 400px;
+  }
+}
+
+/* Previous events list styling */
+.previous-events-list {
+  margin: 2rem 0;
+}
+
+.previous-event-item {
+  background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  border-left: 4px solid var(--md-accent-fg-color);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+[data-md-color-scheme="slate"] .previous-event-item {
+  background: linear-gradient(145deg, #2d3748, #1a202c);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.previous-event-item:hover {
+  transform: translateX(8px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+[data-md-color-scheme="slate"] .previous-event-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.previous-event-item a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.previous-event-item a:hover {
+  text-decoration: none;
+}
+
+.event-date-text {
+  color: var(--md-accent-fg-color);
+  font-weight: 600;
+  font-size: 0.95rem;
+  min-width: 150px;
+}
+
+.event-title {
+  color: var(--md-primary-fg-color);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+[data-md-color-scheme="slate"] .event-title {
+  color: var(--md-primary-fg-color--light);
+}
+
+.event-sponsor-text {
+  color: #64748b;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+[data-md-color-scheme="slate"] .event-sponsor-text {
+  color: #94a3b8;
+}
+
+/* Mobile responsiveness for previous events */
+@media screen and (max-width: 48em) {
+  .previous-event-item {
+    padding: 0.65rem 0.85rem;
+  }
+
+  .previous-event-item a {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .event-date-text {
+    min-width: auto;
   }
 }

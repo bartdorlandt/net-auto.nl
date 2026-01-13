@@ -104,7 +104,7 @@ tasks:
       echo "What is the full address? (used for Gmaps link)"
       read event_address
       event_sponsor_lower=$(echo "$event_sponsor" | tr '[:upper:]' '[:lower:]')
-      event_file="{{.site_dir}}/docs/events/dates/$(echo "$event_date" | sed 's/-//g')_${event_sponsor_lower}.md"
+      event_file="{{.site_dir}}/docs/events/dates/$(echo "$event_date" | sed 's/-//g')_${event_sponsor}.md"
       sponsors=$(sed 's/_/ \& /g' <<< "$event_sponsor")
 
       cat << EOF >> $event_file

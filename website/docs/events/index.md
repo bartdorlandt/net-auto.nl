@@ -2,7 +2,7 @@
 
 Join us for our upcoming network automation meetups! Each event features interesting talks and networking opportunities.
 
-{{ generate_event_tiles(4) }}
+{{ generate_upcoming_event_tiles(4) }}
 
 ---
 
@@ -20,3 +20,9 @@ We are always looking for companies and organizations to host our meetups. If yo
 - Opportunity to showcase your company culture
 - Direct networking with potential talent and partners
 - Community goodwill and industry recognition
+
+---
+
+# 📅 Previous Events
+
+Have a look at our [previous events](previous_events.md).
