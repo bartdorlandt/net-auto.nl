@@ -204,7 +204,7 @@ def define_env(env):
         for event in previous_events:
             event_date_str = event["date"].strftime("%B %d, %Y")
             list_html += f"""  <div class="previous-event-item">
-    <a href="dates/{event["filename"]}/">
+    <a href="/events/dates/{event["filename"]}/">
       <span class="event-date-text">{event_date_str}</span> -
       <span class="event-title">{event["title"]}</span>
       <span class="event-sponsor-text">hosted by {event["sponsor"]}</span>
