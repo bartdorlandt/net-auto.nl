@@ -3,7 +3,7 @@ import pytest
 
 
 def test__y_m_d_sponsor_from_filename():
-    filename = "20260205_company1_company2"
+    filename = "20260205_Company1_Company2"
     year, month, day, sponsor = main.y_m_d_sponsor_from_filename(filename)
     assert year == "2026"
     assert month == "Feb"
