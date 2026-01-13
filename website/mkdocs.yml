@@ -153,7 +153,7 @@ extra:
       link: feed_rss_created.xml
     - icon: fontawesome/solid/envelope
       name: Contact Us
-      link: contact/index.html
+      link: /contact/index.html
 
   generator: false
 
