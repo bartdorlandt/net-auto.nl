@@ -23,7 +23,9 @@ Thank you Adyen for providing your office space to host us and Netpicker/Slurpit
 * We have a hard stop at 21:00. We will need to be outside the building by then.
 
 ## Location
-{{ google_maps_link("Rokin 49, Amsterdam, 1012KK, The Netherlands") }}
+* {{ google_maps_link("Rokin 49, Amsterdam, 1012KK, The Netherlands") }}
+* Ensure you are entering the correct building at **Rokin 49**!
+  * ![Adyen_rokin_49](images/rokin_49.png)
 
 ## Agenda
 
