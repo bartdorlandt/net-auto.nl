@@ -2,7 +2,7 @@
 # draft: true
 date:
   created: 2025-11-14
-  updated: 2025-11-18
+  updated: 2026-01-31
 description: 2026-02-05 NLNAM Meetup event
 title: NLNAM Meetup
 ---

@@ -112,7 +112,7 @@ tasks:
       # draft: true
       date:
         created: {{ now.Format "2006-01-02" }}
-        # updated: {{ now.Format "2006-01-02" }}
+        updated: {{ now.Format "2006-01-02" }}
       title: NLNAM Meetup
       description: $event_date NLNAM Meetup event
       ---
