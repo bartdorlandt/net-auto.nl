@@ -20,11 +20,13 @@ Thank you Adyen for providing your office space to host us and Netpicker/Slurpit
 
 ## Specifics
 * **<u>Bring your ID</u>** to enter the Adyen building.
+* There is no (guest) parking available
 * We have a hard stop at 21:00. We will need to be outside the building by then.
     * After the event we can meet at: [De bekeerde suster](https://maps.app.goo.gl/4AJCxdaQP6um1LQx5).
 
 ## Location
 * {{ google_maps_link("Rokin 49, Amsterdam, 1012KK, The Netherlands") }}
+* There is no (guest) parking available
 * Ensure you are entering the correct building at **Rokin 49**!
     ![Adyen_rokin_49](images/rokin_49.png)
 
