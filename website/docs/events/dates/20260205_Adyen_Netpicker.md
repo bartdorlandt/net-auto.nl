@@ -27,7 +27,7 @@ Thank you Adyen for providing your office space to host us and Netpicker/Slurpit
 ## Location
 * {{ google_maps_link("Rokin 49, Amsterdam, 1012KK, The Netherlands") }}
 * There is no (guest) parking available
-* Ensure you are entering the correct building at **Rokin 49**!
+* Ensure you are entering the correct entrance for Adyen at **Rokin 49**!
     ![Adyen_rokin_49](images/rokin_49.png)
 
 ## Agenda
