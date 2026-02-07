@@ -23,6 +23,6 @@ We are always looking for companies and organizations to host our meetups. If yo
 
 ---
 
-# 📅 Previous Events
+## 📅 Previous Events
 
 Have a look at our [previous events](previous_events.md).
