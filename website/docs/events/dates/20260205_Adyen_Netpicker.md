@@ -32,13 +32,16 @@ Thank you Adyen for providing your office space to host us and Netpicker/Slurpit
 
 ## Agenda
 
-| Time  | Activity                                                                                                                                                                            |
-| ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 17:30 | Doors open                                                                                                                                                                          |
-| 18:00 | Welcome + **Adyen** sponsor talk                                                                                                                                                    |
-| 18:15 | **Netpicker** presentation                                                                                                                                                          |
-| 18:45 | How to not go insane with Network Automation: strategies for a healthy development  by [Gabriel Lacerda](https://www.linkedin.com/in/gabrieldeslacerda/)                            |
-| 19:15 | Break + Pizza 🍕                                                                                                                                                                     |
-| 20:00 | Enriched infra changes with unit testing & code quality by [David Lunel](https://www.linkedin.com/in/david-lunel-b5721b61/)/[Chris Tomkins](https://www.linkedin.com/in/cdtomkins/) |
-| 20:30 | QR feedback moment (5 min) and closing words                                                                                                                                        |
-| 21:00 | Be outside the building                                                                                                                                                             |
+| Time  | Activity                                                                                                                                                                                                                                                                      |
+| ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 17:30 | Doors open                                                                                                                                                                                                                                                                    |
+| 18:00 | Welcome + **Adyen** sponsor talk                                                                                                                                                                                                                                              |
+| 18:15 | [Otto Coster](https://www.linkedin.com/in/ottocoster/) - [Creating an AI agent for network automation](https://drive.google.com/file/d/1BTMtdz1gMyNIm6l2OgXzQLHnAFjM65Kh/view?usp=drive_link)                                                                                 |
+| 18:45 | [Gabriel Lacerda](https://www.linkedin.com/in/gabrieldeslacerda/) - [How to not go insane with Network Automation: strategies for a healthy development](https://drive.google.com/file/d/1kfVfQVtD9VFcwpzJlPNUudrpSxrONNUH/view?usp=drive_link)                               |
+| 19:15 | Break + Pizza 🍕                                                                                                                                                                                                                                                               |
+| 20:00 | [David Lunel](https://www.linkedin.com/in/david-lunel-b5721b61/) / [Chris Tomkins](https://www.linkedin.com/in/cdtomkins/) - [Enriched infra changes with unit testing & code quality](https://drive.google.com/file/d/1GpkhXQK67xToJKF-ks-pdcOn303uj9Qo/view?usp=drive_link) |
+| 20:30 | QR feedback moment (5 min) and closing words                                                                                                                                                                                                                                  |
+| 21:00 | Be outside the building                                                                                                                                                                                                                                                       |
+
+## Photos
+[Link to photos](https://drive.google.com/drive/folders/1-vkq0g-egXumLlw61BlsHTSBauD2b9tR?usp=drive_link)
