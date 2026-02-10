@@ -143,11 +143,15 @@ tasks:
       | 18:00 | Doors open                                    |
       | 18:25 | Welcome + **$event_sponsor** sponsor talk     |
       | 19:00 | Talk 1                                        |
-      | 19:30 | Talk 2                                        |
-      | 20:00 | Break + Pizza 🍕                              |
+      | 19:30 | Break + Pizza 🍕                               |
+      | 20:00 | Talk 2                                        |
       | 20:30 | Talk 3                                        |
       | 21:00 | Closing words                                 |
       | 21:30 | Venue closing                                 |
+
+      <!--## Photos
+      [Link to photos](link_to_drive)
+      -->
       EOF
       sed -i '' \
         -e 's@{\\@{@g' \
