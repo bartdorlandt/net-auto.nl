@@ -209,7 +209,6 @@ tasks:
         - event_date
         - event_sponsor
     cmd: |
-      event_date_numbers=$(echo "$event_date" | sed 's/-//g')
       raw_date="{{.event_date}}"
       date_formatted=$(echo "${raw_date:0:4}-${raw_date:4:2}-${raw_date:6:2}")
 
@@ -220,9 +219,9 @@ tasks:
       Hi #NLNAM community!
 
       We have the next meetup scheduled on $date_formatted with the help of #{{ .event_sponsor }}.
-      If you haven't registered yet, you can at: https://pretix.eu/nlnam/${event_date_numbers}-${event_sponsor_lower}/
+      If you haven't registered yet, you can at: https://pretix.eu/nlnam/{{.event_date}}-{{.event_sponsor | lower}}/
 
-      At the same time we are always looking for speakers to present at the events.
+      At the same time we are always looking for speakers to present at the event.
       If you have a nice topic you'd like to share with the community, please submit a presentation proposal using:
 
       {{.rfp_form_url}}
