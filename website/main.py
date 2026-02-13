@@ -121,7 +121,6 @@ def define_env(env):
     </div>
     <div class="event-content">
       <h3>{title}</h3>
-      <p class="event-sponsor">🏢 Hosted by {sponsor_formatted}</p>
     </div>
   </div>
 </a>
@@ -207,7 +206,6 @@ def define_env(env):
     <a href="/events/dates/{event["filename"]}/">
       <span class="event-date-text">{event_date_str}</span> -
       <span class="event-title">{event["title"]}</span>
-      <span class="event-sponsor-text">hosted by {event["sponsor"]}</span>
     </a>
   </div>
 """

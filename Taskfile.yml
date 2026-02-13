@@ -56,7 +56,7 @@ tasks:
 
   deploy:
     desc: Deploy the site to GitHub Pages branch
-    aliases: [delpoy]
+    aliases: [deploy]
     prompt:
       - This actually deploys the site. Do you want to continue?
     cmds:
@@ -104,7 +104,8 @@ tasks:
       echo "What is the full address? (used for Gmaps link)"
       read event_address
       event_sponsor_lower=$(echo "$event_sponsor" | tr '[:upper:]' '[:lower:]')
-      event_file="{{.site_dir}}/docs/events/dates/$(echo "$event_date" | sed 's/-//g')_${event_sponsor}.md"
+      event_date_numbers=$(echo "$event_date" | sed 's/-//g')
+      event_file="{{.site_dir}}/docs/events/dates/${event_date_numbers}_${event_sponsor}.md"
       sponsors=$(sed 's/_/ \& /g' <<< "$event_sponsor")
 
       cat << EOF >> $event_file
@@ -113,17 +114,17 @@ tasks:
       date:
         created: {{ now.Format "2006-01-02" }}
         updated: {{ now.Format "2006-01-02" }}
-      title: NLNAM Meetup
+      title: NLNAM Meetup @ $sponsors
       description: $event_date NLNAM Meetup event
       ---
 
-      # NLNAM Meetup with $sponsors
+      # NLNAM Meetup @ $sponsors
 
       The next meetup is hosted by [$sponsors]($event_website) on $event_date.
 
       Thank you $sponsors for opening your doors to host us and fill our bellies with pizzas and drinks!
 
-      * [Register for the event](https://nlnam_${event_sponsor_lower}.eventbrite.nl/)
+      * [Register for the event](https://pretix.eu/nlnam/${event_date_numbers}-${event_sponsor_lower}/)
           * Registration ends on {\{ get_older_date("$event_date", 1) }} at 23:59.
       * [Submit a presentation proposal]({{.rfp_form_url}})
           * Talks will be selected and communicated around {\{ get_older_date("$event_date", 30) }}.
@@ -218,9 +219,9 @@ tasks:
       Hi #NLNAM community!
 
       We have the next meetup scheduled on $date_formatted with the help of #{{ .event_sponsor }}.
-      If you haven't registered yet, please do so using: https://nlnam_{{.event_sponsor | lower}}.eventbrite.nl/
+      If you haven't registered yet, you can at: https://pretix.eu/nlnam/{{.event_date}}-{{.event_sponsor | lower}}/
 
-      At the same time we are always looking for speakers to present at the events.
+      At the same time we are always looking for speakers to present at the event.
       If you have a nice topic you'd like to share with the community, please submit a presentation proposal using:
 
       {{.rfp_form_url}}

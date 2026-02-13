@@ -394,16 +394,6 @@
   color: var(--md-primary-fg-color--light);
 }
 
-.event-sponsor-text {
-  color: #64748b;
-  font-size: 0.9rem;
-  font-style: italic;
-}
-
-[data-md-color-scheme="slate"] .event-sponsor-text {
-  color: #94a3b8;
-}
-
 /* Mobile responsiveness for previous events */
 @media screen and (max-width: 48em) {
   .previous-event-item {
