@@ -158,23 +158,44 @@ tasks:
         -e 's@{\\@{@g' \
         "$event_file"
 
-      code $event_file
+      task event_date=$event_date_numbers event_sponsor=$event_sponsor create_reminders_specific_event
 
-  create_reminders:
+  create_reminders_upcoming:
     desc: Create reminders for the next upcoming event (dynamically finds the closest future date)
+    vars:
+      event_date: "{{.upcoming_event_date}}"
+      event_sponsor: "{{.upcoming_event_sponsor}}"
     cmds:
+      - task: create_reminders_specific_event
+        vars:
+          event_date: "{{.event_date}}"
+          event_sponsor: "{{.event_sponsor}}"
+
+  create_reminders_specific_event:
+    desc: Create reminders for the next upcoming event (dynamically finds the closest future date)
+    requires:
+      vars:
+        - event_date
+        - event_sponsor
+    deps:
       - task: internal:reminder_rfp
         vars:
-          event_date: "{{.upcoming_event_date}}"
-          event_sponsor: "{{.upcoming_event_sponsor}}"
+          event_date: "{{.event_date}}"
+          event_sponsor: "{{.event_sponsor}}"
       - task: internal:reminder_event
         vars:
-          event_date: "{{.upcoming_event_date}}"
-          event_sponsor: "{{.upcoming_event_sponsor}}"
+          event_date: "{{.event_date}}"
+          event_sponsor: "{{.event_sponsor}}"
+      - task: internal:schedule
+        vars:
+          event_date: "{{.event_date}}"
+          event_sponsor: "{{.event_sponsor}}"
 
   internal:reminder_rfp:
     desc: Prepare a reminder to submit RFP for the next event
     silent: true
+    vars:
+      file: reminders/{{.event_date}}_rfp_linkedin.txt
     requires:
       vars:
         - event_date
@@ -183,8 +204,8 @@ tasks:
       raw_date="{{.event_date}}"
       date_formatted=$(echo "${raw_date:0:4}-${raw_date:4:2}-${raw_date:6:2}")
       mkdir -p reminders
-      rm reminders/*_rfp_linkedin.txt 2>/dev/null || true
-      cat << EOF >> reminders/{{.event_date}}_rfp_linkedin.txt
+      rm {{.file}} 2>/dev/null || true
+      cat << EOF >> {{.file}}
       Hi #NLNAM community!
 
       We have the next meetup scheduled on $date_formatted with the help of #{{ .event_sponsor }}.
@@ -193,29 +214,34 @@ tasks:
       If you have a nice topic you'd like to share with the community, please submit a presentation proposal using:
       {{.rfp_form_url}}
 
+      We especially welcome new speakers.
+
       If you know someone that should give a talk, please share this message with them!
 
       See you at the meetup!
 
-      More info at {{.site_url}}
+      More info at {{.site_url}}/events/dates/{{.event_date}}_{{.event_sponsor}}/
+
       EOF
-      echo "RFP reminder created at reminders/{{.event_date}}_rfp_linkedin.txt"
+      echo "RFP reminder created at {{.file}}"
 
   internal:reminder_event:
     desc: Prepare a reminder for the next event
     silent: true
+    vars:
+      file: reminders/{{.event_date}}_event_linkedin.txt
     requires:
       vars:
-        - event_date
+        - event_date # YYYYMMDD
         - event_sponsor
     cmd: |
       raw_date="{{.event_date}}"
       date_formatted=$(echo "${raw_date:0:4}-${raw_date:4:2}-${raw_date:6:2}")
 
       mkdir -p reminders
-      rm reminders/*_event_linkedin.txt 2>/dev/null || true
+      rm {{.file}} 2>/dev/null || true
 
-      cat << EOF >> reminders/{{.event_date}}_event_linkedin.txt
+      cat << EOF >> {{.file}}
       Hi #NLNAM community!
 
       We have the next meetup scheduled on $date_formatted with the help of #{{ .event_sponsor }}.
@@ -230,6 +256,81 @@ tasks:
 
       See you at the meetup!
 
-      More info at {{.site_url}}
+      More info at {{.site_url}}/events/dates/{{.event_date}}_{{.event_sponsor}}/
+
       EOF
-      echo "RFP reminder created at reminders/{{.event_date}}_event_linkedin.txt"
+      echo "RFP reminder created at {{.file}}"
+
+  internal:schedule:
+    desc: Prepare a schedule for the next event
+    silent: true
+    vars:
+      file: reminders/{{.event_date}}_schedule.txt
+    requires:
+      vars:
+        - event_date
+        - event_sponsor
+    cmd: |
+      raw_date="{{.event_date}}"
+      date_formatted=$(echo "${raw_date:0:4}-${raw_date:4:2}-${raw_date:6:2}")
+
+      mkdir -p reminders
+      rm {{.file}} 2>/dev/null || true
+
+      cat << EOF >> {{.file}}
+      Now: post on linkedIn about the new event. "cat reminders/{{.event_date}}_event_linkedin.txt"
+
+      $(uv run python -c "from website.main import _get_older_date; print(_get_older_date(\"$date_formatted\", 90))")
+      90d - Send out reminder about Event -- Schedule in LinkedIn
+      cat reminders/{{.event_date}}_event_linkedin.txt
+
+      $(uv run python -c "from website.main import _get_older_date; print(_get_older_date(\"$date_formatted\", 70))")
+      70d - Send out reminder about RfP -- Schedule in LinkedIn
+      cat reminders/{{.event_date}}_rfp_linkedin.txt
+
+      $(uv run python -c "from website.main import _get_older_date; print(_get_older_date(\"$date_formatted\", 56))")
+      56d - Send out reminder about RfP -- Schedule in LinkedIn
+      cat reminders/{{.event_date}}_rfp_linkedin.txt
+
+      $(uv run python -c "from website.main import _get_older_date; print(_get_older_date(\"$date_formatted\", 49))")
+      49d - Send out reminder about RfP -- Schedule in LinkedIn
+      cat reminders/{{.event_date}}_rfp_linkedin.txt
+
+      $(uv run python -c "from website.main import _get_older_date; print(_get_older_date(\"$date_formatted\", 42))")
+      42d - Send out reminder about Event -- Schedule in LinkedIn
+      cat reminders/{{.event_date}}_event_linkedin.txt
+
+      $(uv run python -c "from website.main import _get_older_date; print(_get_older_date(\"$date_formatted\", 35))")
+      35d - Send out reminder about Event -- Schedule in LinkedIn
+      cat reminders/{{.event_date}}_event_linkedin.txt
+
+      $(uv run python -c "from website.main import _get_older_date; print(_get_older_date(\"$date_formatted\", 30))")
+      30d - Send out reminder about First external speaker -- put in Reminders app
+
+      $(uv run python -c "from website.main import _get_older_date; print(_get_older_date(\"$date_formatted\", 23))")
+      23d - Send out reminder about Second external speaker -- put in Reminders app
+
+      $(uv run python -c "from website.main import _get_older_date; print(_get_older_date(\"$date_formatted\", 14))")
+      14d - Send out reminder about Event -- Schedule in LinkedIn
+      Hi #NLNAM community!
+
+      We have the next meetup scheduled on {{.event_date}} with the help of #{{.event_sponsor}}.
+      If you haven't registered yet, you can at: https://pretix.eu/nlnam/{{.event_date}}-{{.event_sponsor | lower}}/
+
+      See you at the meetup!
+
+      More info at {{.site_url}}/events/dates/{{.event_date}}_{{.event_sponsor}}/
+
+      $(uv run python -c "from website.main import _get_older_date; print(_get_older_date(\"$date_formatted\", 2))")
+      2d - Send out last reminder about Event -- Schedule in LinkedIn
+      Hi #NLNAM community!
+
+      We have the next meetup scheduled on {{.event_date}} with the help of #{{.event_sponsor}}.
+      That is only 2 days from now 😎
+
+      See you at the meetup!
+
+      More info at {{.site_url}}/events/dates/{{.event_date}}_{{.event_sponsor}}/
+
+      EOF
+      echo "Schedule for LinkedIn created at {{.file}}"
