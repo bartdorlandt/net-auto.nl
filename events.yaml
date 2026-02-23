@@ -1,0 +1,30 @@
+"20260909":
+  date: "20260909"
+  sponsor: One Zero IT
+  website: https://onezeroit.com/
+  address: Van Deventerlaan 30-40, Utrecht
+  event_number: 3
+  sponsor_non_space: One_Zero_IT
+  event_file: 20260909_One_Zero_IT
+  date_formatted: "2026-09-09"
+  slug: 20260909-onezeroit
+"20260513":
+  date: "20260513"
+  sponsor: APNT
+  website: https://www.apnt.nl/
+  address: Laan der Continenten 182, 2404 WE, Alphen aan den Rijn
+  event_number: 2
+  sponsor_non_space: APNT
+  event_file: 20260513_APNT
+  date_formatted: "2026-05-13"
+  slug: 20260513-apnt
+"20260205":
+  date: "20260205"
+  sponsor: Adyen_Netpicker
+  website: https://www.adyen.com/, https://netpicker.io/
+  address: Rokin 49, Amsterdam, 1012KK, The Netherlands
+  event_number: 1
+  sponsor_non_space: Adyen__Netpicker
+  event_file: 20260205_Adyen_Netpicker
+  date_formatted: "2026-02-05"
+  slug: 20260205-adyen-netpicker
