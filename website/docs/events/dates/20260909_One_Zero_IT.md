@@ -1,13 +1,13 @@
 ---
 # draft: true
 date:
-  created: 2026-02-15
-  updated: 2026-02-15
-title: NLNAM Meetup @ One Zero IT
-description: 2026-09-09 NLNAM Meetup event
+  created: 2026-02-24
+  updated: 2026-02-24
+title: NLNAM Meetup 3 @ One Zero IT
+description: 2026-09-09 NLNAM Meetup 3
 ---
 
-# NLNAM Meetup @ One Zero IT
+# NLNAM Meetup 3 @ One Zero IT
 
 The next meetup is hosted by [One Zero IT](https://onezeroit.com/){target="_blank"} on 2026-09-09.
 
@@ -19,23 +19,23 @@ Thank you One Zero IT for opening your doors to host us and fill our bellies wit
     * Talks will be selected and communicated around {{ get_older_date("2026-09-09", 30) }}.
 
 ## Specifics
-* Parking is available
+* Parking is available, ring the bell for "One Zero IT/ 90 North"
 
 ## Location
-{{ google_maps_link("Van Deventerlaan 30-40, Utrecht, Nederland") }}
+{{ google_maps_link("Van Deventerlaan 30-40, Utrecht") }}
 
 ## Agenda
 
 | Time  | Activity                               |
 | ----- | -------------------------------------- |
 | 18:00 | Doors open                             |
-| 18:25 | Welcome + **One Zero IT** sponsor talk |
+| 18:25 | Welcome + **One_Zero_IT** sponsor talk |
 | 19:00 | Talk 1                                 |
 | 19:30 | Break + Pizza 🍕                        |
 | 20:00 | Talk 2                                 |
 | 20:30 | Talk 3                                 |
-| 21:00 | Closing words                          |
-| 21:30 | Venue closing                          |
+| 21:00 | Closing words + networking             |
+| ...   | Venue closing                          |
 
 <!--## Photos
 [Link to photos](link_to_drive)
