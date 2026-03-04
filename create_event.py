@@ -42,10 +42,12 @@ env.read_env()
 
 EVENT_NAME = "nlnam"
 API_BASE_URL = f"https://pretix.eu/api/v1/organizers/{EVENT_NAME}/events"
-HEADERS = httpx.Headers({
-    "Content-Type": "application/json",
-    "authorization": f"token {env('PRETIX_API_TOKEN')}",
-})
+HEADERS = httpx.Headers(
+    {
+        "Content-Type": "application/json",
+        "authorization": f"token {env('PRETIX_API_TOKEN')}",
+    }
+)
 client = httpx.Client(headers=HEADERS)
 DEFAULT_SOURCE_EVENT = "20260513-apnt"
 DEFAULT_EVENTS_FILE = "events.yaml"

@@ -4,11 +4,7 @@ version = "0.1.0"
 description = "net-auto.nl NL Network Automation Meetup website"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = [
-    "click>=8.2.1",
-    "environs>=14.6.0",
-    "httpx>=0.28.1",
-]
+dependencies = ["click>=8.2.1", "environs>=14.6.0", "httpx>=0.28.1"]
 
 [dependency-groups]
 dev = [
@@ -16,4 +12,5 @@ dev = [
     "mkdocs-rss-plugin>=1.17.1",
     "mkdocs-macros-plugin>=1.2.0",
     "pytest>=9.0.1",
+    "ruff>=0.15.4",
 ]

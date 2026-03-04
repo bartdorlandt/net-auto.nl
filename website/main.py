@@ -184,15 +184,17 @@ def define_env(env):
             title = meta.get("title", "NLNAM Meetup")
 
             # Add to previous events list
-            previous_events.append({
-                "filename": filename,
-                "year": year_str,
-                "month": month_str,
-                "day": day_str,
-                "sponsor": sponsor_formatted,
-                "title": title,
-                "date": event_date,
-            })
+            previous_events.append(
+                {
+                    "filename": filename,
+                    "year": year_str,
+                    "month": month_str,
+                    "day": day_str,
+                    "sponsor": sponsor_formatted,
+                    "title": title,
+                    "date": event_date,
+                }
+            )
 
         if not previous_events:
             return '<div class="no-events"><p>📅 No previous events found.</p></div>'
