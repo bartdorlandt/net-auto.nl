@@ -23,6 +23,15 @@ We are always looking for companies and organizations to host our meetups. If yo
 
 ---
 
+## 📸 A glimpse
+
+<div style="display: flex; gap: 1rem;">
+  <img src="../images/presentation1.jpeg" alt="Presentation at NLNAM Meetup" style="width: 50%; border-radius: 8px;">
+  <img src="../images/presentation2.jpeg" alt="Presentation at NLNAM Meetup" style="width: 50%; border-radius: 8px;">
+</div>
+
+---
+
 ## 📅 Previous Events
 
 Have a look at our [previous events](previous_events.md).
