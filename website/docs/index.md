@@ -60,14 +60,10 @@
     - NetDevOps best practices
     - Tool comparisons and recommendations
 
-=== "Hands-on Workshops"
-
-    Interactive sessions where you can:
-
-    - Build automation playbooks
-    - Deploy infrastructure with code
-    - Practice troubleshooting techniques
-    - Collaborate on group projects
+    <div style="display: flex; gap: 1rem;">
+      <img src="../images/presentation1.jpeg" alt="Presentation at NLNAM Meetup" style="width: 50%; border-radius: 8px;">
+      <img src="../images/presentation2.jpeg" alt="Presentation at NLNAM Meetup" style="width: 50%; border-radius: 8px;">
+    </div>
 
 === "Networking"
 
@@ -78,6 +74,16 @@
     - Financial institutions
     - Government agencies
     - Startups and scale-ups
+
+<!--
+=== "Hands-on Workshops"
+
+    Interactive sessions where you can:
+
+    - Build automation playbooks
+    - Deploy infrastructure with code
+    - Practice troubleshooting techniques
+    - Collaborate on group projects -->
 
 ## 🔗 Stay Connected
 
