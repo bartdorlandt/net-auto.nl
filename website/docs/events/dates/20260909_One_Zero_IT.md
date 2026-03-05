@@ -19,7 +19,8 @@ Thank you One Zero IT for opening your doors to host us and fill our bellies wit
     * Talks will be selected and communicated around {{ get_older_date("2026-09-09", 30) }}.
 
 ## Specifics
-* Parking is available, ring the bell for "One Zero IT/ 90 North"
+* Parking is available, ring the bell, park on "90 North" spots
+* The office is on the 2nd floor
 
 ## Location
 {{ google_maps_link("Van Deventerlaan 30-40, Utrecht") }}
