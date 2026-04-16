@@ -1,0 +1,412 @@
+/* Network Automation Theme Enhancements */
+
+:root {
+  --md-primary-fg-color:        #37474f;
+  --md-primary-fg-color--light: #546e7a;
+  --md-primary-fg-color--dark:  #263238;
+  --md-accent-fg-color:         #00acc1;
+  --md-accent-fg-color--light:  #26c6da;
+  --md-accent-fg-color--dark:   #00838f;
+}
+
+/* Dark theme network automation colors */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #7e57c2;
+  --md-primary-fg-color--light: #9575cd;
+  --md-primary-fg-color--dark:  #673ab7;
+  --md-accent-fg-color:         #00e5ff;
+  --md-accent-fg-color--light:  #18ffff;
+  --md-accent-fg-color--dark:   #00b8d4;
+  --md-code-bg-color:           #1e1e2e;
+  --md-code-fg-color:           #cdd6f4;
+}
+
+/* Header enhancements */
+.md-header {
+  background: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-primary-fg-color--dark));
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Network automation specific styling */
+.network-automation-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.tech-badge {
+  background: var(--md-accent-fg-color);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Code block enhancements */
+.highlight pre {
+  border-left: 4px solid var(--md-accent-fg-color);
+  border-radius: 8px;
+  background: var(--md-code-bg-color);
+}
+
+/* Network topology diagrams */
+.topology-container {
+  background: linear-gradient(145deg, #f0f4f8, #e2e8f0);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+[data-md-color-scheme="slate"] .topology-container {
+  background: linear-gradient(145deg, #2d3748, #1a202c);
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* Enhanced navigation */
+.md-nav__item--active > .md-nav__link {
+  background: linear-gradient(90deg, var(--md-accent-fg-color), transparent);
+  border-left: 4px solid var(--md-accent-fg-color);
+}
+
+/* Custom admonitions for network automation */
+.md-typeset .admonition.automation {
+  border-color: #00acc1;
+}
+
+.md-typeset .admonition.automation > .admonition-title {
+  background-color: rgba(0, 172, 193, 0.1);
+  border-color: #00acc1;
+}
+
+.md-typeset .admonition.automation > .admonition-title::before {
+  background-color: #00acc1;
+  mask-image: var(--md-admonition-icon--tip);
+}
+
+.md-typeset .admonition.network {
+  border-color: #7e57c2;
+}
+
+.md-typeset .admonition.network > .admonition-title {
+  background-color: rgba(126, 87, 194, 0.1);
+  border-color: #7e57c2;
+}
+
+.md-typeset .admonition.network > .admonition-title::before {
+  background-color: #7e57c2;
+  mask-image: var(--md-admonition-icon--info);
+}
+
+/* Responsive improvements */
+@media screen and (max-width: 76.1875em) {
+  .network-automation-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Mobile-specific button improvements */
+@media screen and (max-width: 48em) {
+  .cta-button {
+    width: 100%;
+    margin: 0.5rem 0 !important;
+    display: block;
+  }
+
+  /* Stack buttons vertically on mobile */
+  .network-automation-card p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Stay Connected section - stack buttons vertically on mobile */
+  .stay-connected-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Stay Connected buttons maintain consistent width on mobile */
+  .stay-connected-buttons .cta-button {
+    width: 200px;
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+}
+
+/* Footer enhancements */
+.md-footer {
+  background: linear-gradient(135deg, var(--md-primary-fg-color--dark), #1a1a2e);
+}
+
+/* Table styling for network documentation */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.md-typeset table:not([class]) th {
+  background: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-primary-fg-color--light));
+  color: white;
+  font-weight: 600;
+}
+
+/* Highlight important network terms */
+.network-term {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+/* Custom buttons for call-to-action */
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--md-accent-fg-color), var(--md-accent-fg-color--dark));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  max-width: 260px;
+  width: 100%;
+  max-height: 200px;
+  height: 100%;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.05);
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.cta-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+  color: white;
+}
+
+/* Stay Connected buttons container */
+.stay-connected-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+/* Animation for network icons */
+@keyframes pulse-network {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Event tiles styling */
+.events-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.event-tile {
+  background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+  max-width: 509px;
+}
+
+.event-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+[data-md-color-scheme="slate"] .event-tile {
+  background: linear-gradient(145deg, #2d3748, #1a202c);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.event-date {
+  background: linear-gradient(135deg, var(--md-accent-fg-color), var(--md-accent-fg-color--dark));
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.event-day {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.event-month {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.25rem;
+}
+
+.event-year {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-top: 0.25rem;
+}
+
+.event-content {
+  padding: 1.5rem;
+}
+
+.event-content h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--md-primary-fg-color);
+  font-size: 1.25rem;
+}
+
+[data-md-color-scheme="slate"] .event-content h3 {
+  color: var(--md-primary-fg-color--light);
+}
+
+.event-sponsor {
+  color: var(--md-accent-fg-color);
+  font-weight: 600;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.event-description {
+  color: #64748b;
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+[data-md-color-scheme="slate"] .event-description {
+  color: #94a3b8;
+}
+
+.event-cta {
+  display: inline-block;
+  /* background: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-primary-fg-color--dark)); */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.event-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  color: white;
+}
+
+/* Mobile responsiveness for event tiles */
+@media screen and (max-width: 48em) {
+  .events-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .event-tile {
+    margin: 0 auto;
+    max-width: 400px;
+  }
+}
+
+/* Previous events list styling */
+.previous-events-list {
+  margin: 2rem 0;
+}
+
+.previous-event-item {
+  background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  border-left: 4px solid var(--md-accent-fg-color);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+[data-md-color-scheme="slate"] .previous-event-item {
+  background: linear-gradient(145deg, #2d3748, #1a202c);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.previous-event-item:hover {
+  transform: translateX(8px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+[data-md-color-scheme="slate"] .previous-event-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.previous-event-item a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.previous-event-item a:hover {
+  text-decoration: none;
+}
+
+.event-date-text {
+  color: var(--md-accent-fg-color);
+  font-weight: 600;
+  font-size: 0.95rem;
+  min-width: 150px;
+}
+
+.event-title {
+  color: var(--md-primary-fg-color);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+[data-md-color-scheme="slate"] .event-title {
+  color: var(--md-primary-fg-color--light);
+}
+
+/* Mobile responsiveness for previous events */
+@media screen and (max-width: 48em) {
+  .previous-event-item {
+    padding: 0.65rem 0.85rem;
+  }
+
+  .previous-event-item a {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .event-date-text {
+    min-width: auto;
+  }
+}
