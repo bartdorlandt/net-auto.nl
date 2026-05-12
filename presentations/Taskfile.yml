@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: "3"
+
+vars:
+  MAIN_OPTIONS: "--allow-local-files"
+
+tasks:
+  default: task -l --sort none
+
+  present:
+    desc: Present the presentation
+    vars:
+      OPTIONS: "{{.MAIN_OPTIONS}}"
+    cmds:
+      - open http://localhost:8080/
+      - marp -s {{.OPTIONS}} .

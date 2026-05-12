@@ -1,4 +1,5 @@
 {
+  "markdown.marp.themes": ["./presentations/nlnam.css"],
   "yaml.schemas": {
     "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
   },

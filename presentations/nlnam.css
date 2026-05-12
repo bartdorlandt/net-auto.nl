@@ -1,0 +1,24 @@
+/* @theme nlnam */
+
+@import 'gaia';
+
+section .bottom-right {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+}
+
+section blockquote::before,
+section blockquote::after {
+    content: '';
+}
+
+section blockquote {
+    font-style: italic;
+}
+
+section table {
+    width: 100%;
+    font-size: 0.9em;
+    margin: 0 auto;
+}
