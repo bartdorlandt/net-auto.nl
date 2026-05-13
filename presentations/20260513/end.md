@@ -18,3 +18,11 @@ backgroundImage: url('../images/bg_gaia.png')
 
 ![height:300px](../images/net-auto-logo-transparent.png)
 </div>
+
+---
+## Feedback Form
+
+<!-- _class: lead -->
+![height:300px](feedback_qr.png)
+
+https://tinyurl.com/nlnam-apnt
