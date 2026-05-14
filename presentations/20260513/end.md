@@ -12,7 +12,6 @@ backgroundImage: url('../images/bg_gaia.png')
 - Thank you
 - Please help us clean the room
 - If you took pictures, please share them: bart@net-auto.nl
-- Next meetup  - 9 Sept @ One Zero IT (Utrecht)
 
 <div class="bottom-right">
 
@@ -20,6 +19,13 @@ backgroundImage: url('../images/bg_gaia.png')
 </div>
 
 ---
+
+## Call for speakers
+
+- Next meetup  - 9 Sept @ One Zero IT (Utrecht)
+
+---
+
 ## Feedback Form
 
 <!-- _class: lead -->
