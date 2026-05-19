@@ -99,7 +99,9 @@ def define_env(env):
                 y_m_d_sponsor_from_filename(filename)
             )
             if datetime.now() > datetime(
-                int(year_str), datetime.strptime(month_str, "%b").month, int(day_str)
+                int(year_str),
+                datetime.strptime(month_str, "%b").month,
+                int(day_str) + 1,
             ):
                 continue
             content_full = Path(event_file).read_text(encoding="utf-8")
