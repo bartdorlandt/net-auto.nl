@@ -38,6 +38,6 @@ Thank you One Zero IT for opening your doors to host us and fill our bellies wit
 | 21:00 | Closing words + networking             |
 | ...   | Venue closing                          |
 
-<!--## Photos
-[Link to photos](link_to_drive)
+<!--## Presentations & Photos
+[Presentations and Photos](link_to_drive){:target="_blank"}
 -->

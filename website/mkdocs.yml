@@ -6,6 +6,7 @@ site_author: Bart Dorlandt
 nav:
   - NLNAM: index.md
   - Events: events/index.md
+  - Previous Events: events/previous_events.md
   - About us: about_us/about_us.md
   - Contact: contact/index.md
 
