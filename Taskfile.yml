@@ -7,6 +7,7 @@ vars:
   event_path: "docs/events/dates"
   rfp_form_url: https://forms.gle/qmjaMqcHLuJV3rTy8
   events_yaml: events.yaml
+  dev_addr: localhost:10001
   upcoming_event_filename:
     sh: |
       # Get current date in YYYYMMDD format
@@ -62,12 +63,12 @@ tasks:
       - uv run mkdocs gh-deploy --force
 
   serve:
-    desc: Serve the site locally at http://localhost:8000/
+    desc: Serve the site locally at http://{{.dev_addr}}/
     dir: website
     cmd: |
       export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
-      open http://localhost:8000/
-      uv run mkdocs serve
+      open http://{{.dev_addr}}/
+      uv run mkdocs serve -a {{.dev_addr}}
 
   ### Initialize the repo
   init:
